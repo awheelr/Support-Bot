@@ -1,0 +1,12 @@
+{
+    "token": "Secret token",
+    "prefix": "$",
+    "supportid": "Support role ID",
+    "logchannelid": "Log channel ID",
+    "guildid": "Guild ID",
+    "categorytickets": "Category ID",
+    "status": "Example: dnd",
+    "gamename": "Name of stream / game",
+    "gametype": "Example: STREAMING or GAME",
+    "twitchurl": "URL example: https://www.twitch.tv/twitch",
+}

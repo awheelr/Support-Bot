@@ -1,0 +1,18 @@
+{
+  "name": "support-bot",
+  "version": "1.0.0",
+  "description": "Discord.js Bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Austin W",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "discord.js": "^11.4.2",
+    "fs": "0.0.1-security",
+    "moment": "^2.24.0",
+    "nodemon": "^1.18.10"
+  }
+}
