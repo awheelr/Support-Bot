@@ -49,9 +49,13 @@ client.on("message", async message => {
     var guild = client.guilds.get(config.guildid)
     var userid = message.author.id;
 
-    if (message.channel.type == 'dm') {
-        if (!message.content.startsWith(config.prefix)) return;
-        if (message.author.id === '328077146880999425') return;
+    if (message.channel.type === 'dm') {
+        if (message.content.startsWith(config.prefix)) {
+            return null
+        }
+        if (message.author.id === '328077146880999425') {
+            return null
+        }
 
         let channel = (guild.channels.find(channel => channel.name === userid))
         if (channel) {
