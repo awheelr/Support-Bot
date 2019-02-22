@@ -1,10 +1,9 @@
-const config = require('../config.json')
-
+const config = require("../config.json");
 exports.run = (client, message) => {
-  if (message.channel.type === 'dm') {
-    return message.author.send('You don\'t have permission for this command')
+  if (message.channel.type === "dm") {
+    return message.author.send("You don't have permission for this command");
   } else {
-    message.channel.delete()
+    message.channel.delete();
     client.channels.get(config.logchannelid).send({
       embed: {
         color: 3447003,
@@ -15,19 +14,18 @@ exports.run = (client, message) => {
         fields: [{
           name: `Ticket Closed`,
           value: `ID: ${message.channel.id}`
-        },
+        }
         ],
         timestamp: new Date(),
         footer: {
           text: `Closed`
         }
       }
-    })
-    let id = message.channel.name
-    client.users.get(id).send(`**Your ticket has been closed.** If you need additional help, please message me again.`)
+    });
+    let id = message.channel.name;
+    return client.users.get(id).send(`**Your ticket has been closed.** If you need additional help, please message me again.`);
   }
 };
-
 
 
 exports.conf = {

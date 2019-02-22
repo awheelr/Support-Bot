@@ -1,0 +1,14 @@
+ausToday at 2:38 AM
+how do you do that?
+that could help me not have to define my config.json each time
+onerisKToday at 2:39 AM
+You can pass the config with your client
+Just attach it
+OxiarrToday at 2:39 AM
+you're not allowed to lock any bot features behind a paywall right?
+onerisKToday at 2:39 AM
+client.config = config
+ausToday at 2:39 AM
+oh
+onerisKToday at 2:39 AM
+Then proceed to use that as your config

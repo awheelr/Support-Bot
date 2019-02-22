@@ -1,10 +1,10 @@
-const config = require('../config.json')
+const config = require("../config.json");
 exports.run = (client, message, args) => {
     let command;
-    if (message.channel.type === 'dm') {
-        return message.author.send('You don\'t have permission for this command')
+    if (message.channel.type === "dm") {
+        return message.author.send("You don't have permission for this command");
     } else {
-        let support_role = message.guild.roles.get(`${config.supportid}`);;
+        let support_role = message.guild.roles.get(`${config.supportid}`);
         if (support_role && message.member.roles.has(support_role.id)) {
             if (client.commands.has(args[0])) {
                 command = args[0];
@@ -26,7 +26,7 @@ exports.run = (client, message, args) => {
                     });
             }
         } else {
-            message.channel.send('You don\'t have permission to use this command.')
+            message.channel.send("You don't have permission to use this command.");
         }
     }
 };
@@ -34,7 +34,7 @@ exports.run = (client, message, args) => {
 exports.conf = {
     enabled: true,
     guildOnly: true,
-    aliases: [""],
+    aliases: [""]
 };
 
 exports.help = {
