@@ -3,9 +3,7 @@ exports.run = (client, message, args) => {
     let command;
     if (message.channel.type === "dm") {
         return message.author.send("You don't have permission for this command");
-    } else {
-        let support_role = message.guild.roles.get(`${config.supportid}`);
-        if (support_role && message.member.roles.has(support_role.id)) {
+    } else if (message.author.id === config.ownerid) {
             if (client.commands.has(args[0])) {
                 command = args[0];
             } else if (client.aliases.has(args[0])) {
@@ -28,7 +26,6 @@ exports.run = (client, message, args) => {
         } else {
             message.channel.send("You don't have permission to use this command.");
         }
-    }
 };
 
 exports.conf = {

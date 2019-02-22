@@ -3,9 +3,7 @@ exports.run = (client, message, args) => {
     let messagecount = parseInt(args.join(" "));
     if (message.channel.type === "dm") {
         return message.author.send("You don't have permission for this command");
-    } else {
-        let support_role = message.guild.roles.get(`${config.supportid}`);
-        if (support_role && message.member.roles.has(support_role.id)) {
+    } else if (message.author.id === config.ownerid) {
             message.channel.fetchMessages({
                 limit: messagecount
             }).then(messages => message.channel.bulkDelete(messages));
@@ -17,7 +15,6 @@ exports.run = (client, message, args) => {
 
             if (message.content.startsWith(config.prefix, "purge")) message.delete();
         }
-    }
 };
 
 exports.conf = {

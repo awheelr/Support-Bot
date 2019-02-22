@@ -1,7 +1,9 @@
 const config = require("../config.json");
 exports.run = (client, message) => {
     let args = message.content.split(" ").slice(1);
-    if (message.author.id === config.ownerid) {
+    if (message.channel.type === "dm") {
+        return message.author.send("You don't have permission for this command");
+    } else if (message.author.id === config.ownerid) {
         if (message.delete) {
             message.channel.send(args.join(" "));
         }
